@@ -3,27 +3,33 @@ console.log('app.js was loaded.');
 var app = angular.module("calculator", [])
 .controller("calcController", ["$scope", function($scope) {
   $scope.readout = "0";
+  var evalString = "";
 
-  $scope.grabNumber = function(number) {
+  $scope.calcButton = function(char) {
+    var lastChar = evalString[evalString.length-1];
     if($scope.readout === "0") {
-      $scope.readout = number;
+      $scope.readout = char;
+      evalString += char;
+    } else if(/[+-/*]/.test(char)) {
+      $scope.evaluate();
+      evalString += char;
     } else {
-      $scope.readout += number;
+      if(/[+-/*]/.test(lastChar)) {
+        $scope.readout = char.toString();
+      } else {
+        $scope.readout += char.toString();
+      }
+      evalString += char.toString();
     }
-  };
-
-  $scope.grabOperation = function(operation) {
-    if($scope.readout[$scope.readout.length-1] !== " ") {
-      $scope.readout += (" " + operation + " ");
-    }
-  };
-
-  $scope.grabEquals = function() {
-    $scope.readout = eval($scope.readout).toString();
   }
 
-  $scope.grabClear = function() {
+  $scope.evaluate = function() {
+    $scope.readout = eval(evalString);
+  }
+
+  $scope.clearAll = function() {
     $scope.readout = "0";
+    var evalString = "";
   }
 
 }]);

@@ -17,29 +17,29 @@
             <input ng-model="readout" type="text" class="form-control display center-block text-right" readonly>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default" ng-click="grabNumber('7');">7</button>
-            <button class="btn btn-default" ng-click="grabNumber('8');">8</button>
-            <button class="btn btn-default" ng-click="grabNumber('9');">9</button>
-            <button class="btn btn-primary" ng-click="grabOperation('/');">&divide;</button>
-            <button class="btn btn-primary" ng-click="grabOperation('*');">&times;</button>
+            <button class="btn btn-default" ng-click="calcButton('7');">7</button>
+            <button class="btn btn-default" ng-click="calcButton('8');">8</button>
+            <button class="btn btn-default" ng-click="calcButton('9');">9</button>
+            <button class="btn btn-primary" ng-click="calcButton('/');">&divide;</button>
+            <button class="btn btn-primary" ng-click="calcButton('*');">&times;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default" ng-click="grabNumber('4');">4</button>
-            <button class="btn btn-default" ng-click="grabNumber('5');">5</button>
-            <button class="btn btn-default" ng-click="grabNumber('6');">6</button>
-            <button class="btn btn-primary" ng-click="grabOperation('+');">&plus;</button>
-            <button class="btn btn-primary" ng-click="grabOperation('-');">&minus;</button>
+            <button class="btn btn-default" ng-click="calcButton('4');">4</button>
+            <button class="btn btn-default" ng-click="calcButton('5');">5</button>
+            <button class="btn btn-default" ng-click="calcButton('6');">6</button>
+            <button class="btn btn-primary" ng-click="calcButton('+');">&plus;</button>
+            <button class="btn btn-primary" ng-click="calcButton('-');">&minus;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default" ng-click="grabNumber('1');">1</button>
-            <button class="btn btn-default" ng-click="grabNumber('2');">2</button>
-            <button class="btn btn-default" ng-click="grabNumber('3');">3</button>
-            <button class="btn btn-success" ng-click="grabEquals();">&equals;</button>
-            <button class="btn btn-danger" ng-click="grabClear();">c</button>
+            <button class="btn btn-default" ng-click="calcButton('1');">1</button>
+            <button class="btn btn-default" ng-click="calcButton('2');">2</button>
+            <button class="btn btn-default" ng-click="calcButton('3');">3</button>
+            <button class="btn btn-success" ng-click="evaluate();">&equals;</button>
+            <button class="btn btn-danger" ng-click="clearAll();">c</button>
           </div>
           <div class="row text-center">
             <button class="btn btn-default"></button>
-            <button class="btn btn-default" ng-click="grabNumber('0');">0</button>
+            <button class="btn btn-default" ng-click="calcButton('0');">0</button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
